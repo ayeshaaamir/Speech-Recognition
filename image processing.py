@@ -23,3 +23,8 @@ EC=int(w*84)
 cropped_img=img[SR:ER,SC:EC]
 cv2.imshow('crop image',cropped_img)
 cv2.waitKey(0)
+
+# resize an image
+new_image=cv2.resize(img(0,0),fx=.10,fy=.20)
+cv2.imshow("resize image",new_image)
+cv2.waitKey(0)
