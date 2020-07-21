@@ -28,3 +28,13 @@ cv2.waitKey(0)
 new_image=cv2.resize(img(0,0),fx=.10,fy=.20)
 cv2.imshow("resize image",new_image)
 cv2.waitKey(0)
+
+# adjust image contrast
+# alpha1 and alpha2 defines image contrast
+# if alpha is greater than 1-->higher contrast
+# if alpha is less than 0-1-->lower contrast
+# beta-->the values of beta vary from -127 to +127
+contrast_image=cv2.addWeighted(img,1,np.zeros(img.shape,img.dtype),0,0)
+cv2.imshow('contrast image',contrast_image)
+cv2.waitKey(0)
+
