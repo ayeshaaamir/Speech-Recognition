@@ -22,5 +22,23 @@ model=Sequential(
      Dense(10,activation=tf.nn.softmax) #multi class classification
     ]
 )
+#step 2-->compile model
+model.compile(optimizer='adam',loss='sparse_crossentrophy',matrics=['accuracy'])
+
+#step 3-->fit
+model.fit(x_train,y_train,epochs=2)
+
+# step 4-->evaluate model
+test_loss,test_acc=model.evaluate(x_test,y_test)
+print("test accuracy",test_acc)
+
+#step 5
+prediction=model.predict(x_test)
+prediction[1]
+plt.figure()
+plt.imshow(x_test[1])
+plt.show()
+
+
 
 
